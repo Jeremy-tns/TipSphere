@@ -1,4 +1,4 @@
-export const ApplicationName = 'TipNet';
+export const ApplicationName = 'TipSphere';
 
 export const ReturnUrlType = 'returnUrl';
 
