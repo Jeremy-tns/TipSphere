@@ -1,40 +1,44 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
-import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
-import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
+
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './core/footer/footer.component';
+import { HeaderComponent } from './core/header/header.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
+import { ProfilComponent } from './modules/users/profil/profil.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SidenavRightComponent } from './core/sidenav-right/sidenav-right.component';
+import { SidenavLeftComponent } from './core/sidenav-left/sidenav-left.component';
+import { FilComponent } from './modules/fil/fil.component';
+import { TipstersComponent } from './modules/tipsters/tipsters.component';
+import { BookmakersComponent } from './modules/bookmakers/bookmakers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent
+    FooterComponent,
+    HeaderComponent,
+    NotFoundComponent,
+    SidenavLeftComponent,
+    ProfilComponent,
+    SidenavRightComponent,
+    FilComponent,
+    TipstersComponent,
+    BookmakersComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MDBBootstrapModule.forRoot(),
     FormsModule,
-    ApiAuthorizationModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-    ])
+    AppRoutingModule
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

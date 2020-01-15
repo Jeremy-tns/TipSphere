@@ -1,0 +1,10 @@
+.page-footer{
+  width: 100%;
+}
+
+
+footer.page-footer {
+  bottom: 0;
+  color: #fff;
+  background: linear-gradient(to bottom right, #45aaf2, #be2edd);}
+
