@@ -1,0 +1,43 @@
+
+p {
+    color: black;
+  }
+  
+  .flex-grid {
+    color: white;
+    display: flex;
+    margin: auto -1rem 1rem;
+  }
+  
+  .col {
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,.05);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .main {
+    flex: 3;
+  }
+
+  .title{
+    text-align:center;
+    font-size: 28px;
+    font: 700 25px/1.35 sans-serif;
+  }
+  .title:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    margin: 10px auto 0;
+    background: #45aaf2;
+}
+
+.title2{
+  font-size: 20px;
+  font-weight: 700;
+  color: #45aaf2;
+  text-align: center;
+}
